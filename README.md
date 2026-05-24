@@ -1,43 +1,46 @@
 # design-md
 
-> **DESIGN.md files for AI agents — drop a design spec into any project, get pixel-perfect UI that actually matches**
+> **Machine-readable design specifications in Markdown** — structured visual contracts between designers, developers, and AI agents.
 
 <p align="center">
-  <img src="https://img.shields.io/github/stars/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=FFD700" alt="Stars">
-  <img src="https://img.shields.io/github/forks/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=blue" alt="Forks">
-  <img src="https://img.shields.io/github/issues/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=red" alt="Issues">
-  <img src="https://img.shields.io/github/issues-pr/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=green" alt="PRs">
-  <img src="https://img.shields.io/github/last-commit/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=purple" alt="Last Commit">
+  <a href="https://github.com/hmzainjamil/design-md/stargazers"><img src="https://img.shields.io/github/stars/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=yellow" alt="Stars"></a>
+  <a href="https://github.com/hmzainjamil/design-md/forks"><img src="https://img.shields.io/github/forks/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=blue" alt="Forks"></a>
+  <a href="https://github.com/hmzainjamil/design-md/issues"><img src="https://img.shields.io/github/issues/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=red" alt="Issues"></a>
+  <a href="https://github.com/hmzainjamil/design-md/pulls"><img src="https://img.shields.io/github/issues-pr/hmzainjamil/design-md?style=for-the-badge&labelColor=555&color=green" alt="PRs"></a>
+  <a href="https://github.com/hmzainjamil/design-md/commits/main"><img src="https://img.shields.io/github/last-commit/hmzainjamil/design-md?style=for-the-badge&labelColor=555" alt="Last Commit"></a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Markdown-000000?style=flat&labelColor=555" alt="Markdown">   <img src="https://img.shields.io/badge/CSS-1572B6?style=flat&labelColor=555" alt="CSS">   <img src="https://img.shields.io/badge/Design_Tokens-FF6F00?style=flat&labelColor=555" alt="Design_Tokens">   <img src="https://img.shields.io/badge/Claude_Code-CC785C?style=flat&labelColor=555" alt="Claude_Code">
+  <img src="https://img.shields.io/badge/Markdown-000000?style=flat&labelColor=555&logo=markdown" alt="Markdown">
+  <img src="https://img.shields.io/badge/Design_Tokens-F24E1E?style=flat&labelColor=555" alt="Tokens">
+  <img src="https://img.shields.io/badge/AI_Readable-4285F4?style=flat&labelColor=555" alt="AI">
+  <img src="https://img.shields.io/badge/CSS-1572B6?style=flat&labelColor=555&logo=css3" alt="CSS">
 </p>
 
 ---
 
 ## Why This Exists
 
-AI agents generate technically correct code that looks generic. DESIGN.md provides project-level design context — color tokens, typography, spacing, component specs, and anti-patterns — so agents generate UI that matches your aesthetic instead of defaulting to Bootstrap. 68+ files covering top developer-focused product aesthetics.
+Figma files rot. Storybook drifts from prod. Design docs in Confluence are never updated. DESIGN.md is a plain Markdown file checked into the repo alongside the code it describes. It version-controls with git, reads as context for AI agents, and is the authoritative source of truth for visual decisions.
 
 ---
 
 ## At a Glance
 
-| Property | Value |
+| Dimension | Detail |
 |---|---|
-| DESIGN.md files | 68+ and growing |
-| Inspired by | Stripe, Linear, Vercel, Supabase, Raycast, and more |
-| Compatible agents | Claude Code, Codex, Gemini CLI, Cursor, Copilot |
-| File format | Markdown — readable by any agent |
-| Install method | Copy single file to project root |
-| Token types | Color, Typography, Spacing, Shadow, Motion, Radius |
-| Component coverage | Buttons, forms, cards, nav, tables, modals |
-| Accessibility | WCAG AA compliant specs |
-| Dark mode | Dual-mode token specs |
-| Anti-patterns | Per-file list of generics to avoid |
-| License | MIT |
-| Contributions | PRs welcome |
+| **Format** | Plain Markdown — renders on GitHub, Notion, anywhere |
+| **Location** | `DESIGN.md` in project root or `docs/DESIGN.md` |
+| **Sections** | Color, Typography, Spacing, Components, States, Motion |
+| **Token format** | CSS custom properties + JSON export |
+| **AI integration** | Readable as Claude/GPT context — agents implement from spec |
+| **Version control** | Tracked in git — review design changes in PRs |
+| **Tooling** | No plugins required — any text editor works |
+| **Audience** | Developers, designers, AI agents, QA |
+| **Output** | Living spec that generates CSS, Tailwind config, Figma variables |
+| **Automation** | CI can validate component implementations against DESIGN.md spec |
+| **Naming** | BEM for components, semantic for tokens |
+| **Diff-ability** | Text-based — `git diff DESIGN.md` shows every visual change |
 
 ---
 
@@ -45,133 +48,193 @@ AI agents generate technically correct code that looks generic. DESIGN.md provid
 
 | Concept | Description | Why It Matters |
 |---|---|---|
-| DESIGN.md file | Markdown design specification in project root | Agent-readable design spec — no Figma required |
-| Design token | Named value for a design decision | Consistency across all AI-generated components |
-| Aesthetic reference | Named real-world site the style is inspired by | Gives agent immediate visual reference point |
-| Color system | Primary, secondary, surface, text, border palettes | Full coverage of all UI color contexts |
-| Typography scale | Font, sizes, weights, line-heights, letter-spacing | Readable visual hierarchy definition |
-| Spacing scale | Base unit + multiplier table | Consistent layouts without ad-hoc values |
-| Component spec | Usage rules, variants, states per component | Production-ready behavior not just aesthetics |
-| Motion spec | Easing curves, durations, animation purpose rules | Meaningful motion vs random transitions |
-| Anti-patterns section | Explicit bad patterns to avoid | Agent needs negative examples to avoid defaults |
-| Shadow system | Elevation scale from flat to dramatic | Visual depth language |
-| Responsive rules | Breakpoint system and layout behavior | Mobile-first production layouts |
-| Dark mode tokens | `[data-theme=dark]` overrides block | Dual-mode support from spec |
+| **DESIGN.md** | Single Markdown file spec for a product's visual system | One file, version-controlled, always in sync |
+| **Design Token** | Named, semantic key/value pair for a visual property | Decouple value from usage — change once, update everywhere |
+| **Semantic Color** | `--color-error` not `--color-red` | Intent survives theme changes |
+| **Component Spec** | Anatomy, states, variants, spacing defined in prose + table | Agent or dev can implement without asking questions |
+| **State Inventory** | Default, hover, active, focus, disabled, loading, error | Missing states cause inconsistent UX bugs |
+| **Motion Language** | Duration, easing, which elements animate and when | Prevents "animated everything" chaos |
+| **Decision Log** | Record of why design decisions were made | Future devs understand intent, not just rules |
+| **Constraint System** | Explicit rules about what's NOT allowed | Prevents component sprawl |
+| **Breakpoint Contract** | Named breakpoints with semantic meaning, not just px | Teams share language: "below tablet" is unambiguous |
+| **Accessibility Spec** | WCAG level, contrast minimums, focus behavior | Baked in — not bolted on |
+| **Figma Parity** | DESIGN.md tokens match Figma variable values | Code and design never drift |
+| **Agent Context** | AI reads DESIGN.md before implementing components | Zero back-and-forth for visual questions |
 
 ### 🔥 Hot
 
-| Feature | What It Does | Impact |
+| Pattern | Detail | Why |
 |---|---|---|
-| DESIGN.md file | Markdown design specification in project root | Agent-readable design spec — no Figma required |
-| Design token | Named value for a design decision | Consistency across all AI-generated components |
-| Aesthetic reference | Named real-world site the style is inspired by | Gives agent immediate visual reference point |
-| Color system | Primary, secondary, surface, text, border palettes | Full coverage of all UI color contexts |
-| Typography scale | Font, sizes, weights, line-heights, letter-spacing | Readable visual hierarchy definition |
+| Token semantics layer | `--color-interactive` wraps `--color-blue-600` | Theme-swappable without touching components |
+| Component state table | 8-state matrix per component | No undocumented hover/focus states |
+| Decision log section | `## Why` per major design choice | Future-proof — prevents regressions |
+| AI context block | `<!-- AI: ... -->` HTML comments with implementation notes | Agents generate correct code first try |
 
 ---
 
 ## ⚙️ HOW IT WORKS
 
-1. **Install** — Follow install instructions below
-2. **Configure** — Set environment variables and preferences
-3. **Activate** — Trigger via prompt or command
-4. **Process** — System analyzes input and applies logic
-5. **Output** — Structured, high-quality result
-6. **Iterate** — Refine based on output quality
-7. **Scale** — Apply to more inputs and use cases
-8. **Automate** — Hook into CI/CD or scheduled workflows
-9. **Monitor** — Track outputs and quality metrics
-10. **Improve** — Update configuration based on learnings
+```
+Designer writes DESIGN.md
+          ↓
+Developer reads DESIGN.md → implements components
+          ↓
+AI agent reads DESIGN.md → generates CSS/TSX from spec
+          ↓
+CI validates computed styles match token values in DESIGN.md
+          ↓
+git diff DESIGN.md shows every visual change in PR review
+```
 
 ---
 
 ## 🚀 INSTALL
 
+No installation. Just create `DESIGN.md` in your project root.
+
 ```bash
-# Pick a style
-curl -o DESIGN.md \
-  https://raw.githubusercontent.com/hmzainjamil/design-md/main/linear/DESIGN.md
+# Download the template
+curl -o DESIGN.md https://raw.githubusercontent.com/hmzainjamil/design-md/main/DESIGN.template.md
 
-# Or Stripe-inspired
-curl -o DESIGN.md \
-  https://raw.githubusercontent.com/hmzainjamil/design-md/main/stripe/DESIGN.md
+# Or copy the minimal starter
+cat > DESIGN.md << 'EOF'
+# Design System
 
-# Browse all 68+
-ls designs/
+## Color Tokens
+
+| Token | Value | Usage |
+|---|---|---|
+| `--color-bg` | `#ffffff` | Page background |
+| `--color-text` | `#111111` | Body text |
+| `--color-accent` | `#0070f3` | CTAs, links |
+
+## Typography
+
+| Scale | Value | Usage |
+|---|---|---|
+| `--text-base` | `clamp(1rem, 2vw, 1.125rem)` | Body copy |
+| `--text-xl` | `clamp(1.25rem, 3vw, 1.75rem)` | Section headings |
+
+## Components
+
+### Button
+
+States: default, hover, active, focus, disabled, loading
+
+| State | Background | Text | Border |
+|---|---|---|---|
+| default | `--color-accent` | white | none |
+| hover | darken 10% | white | none |
+| focus | `--color-accent` | white | `2px --color-accent` outline |
+| disabled | `--color-accent` at 40% opacity | white | none |
+EOF
 ```
 
 ---
 
 ## 📟 USAGE
 
+### Feed to AI agent
+
+```
+Read DESIGN.md, then implement a React Button component 
+that exactly matches the spec in the Button section.
+```
+
+### Generate CSS from spec
+
 ```bash
-# Basic usage
-# See above install section for initial setup
+# Extract token table to CSS
+python3 - << 'EOF'
+import re, sys
 
-# Common workflow 1
-# Activate and run primary use case
+with open('DESIGN.md') as f:
+    text = f.read()
 
-# Common workflow 2
-# Advanced configuration with options
+# Parse markdown tables with | Token | Value | Usage |
+lines = []
+for match in re.finditer(r'\|\s*`(--[\w-]+)`\s*\|\s*`([^`]+)`\s*\|', text):
+    lines.append(f"  {match.group(1)}: {match.group(2)};")
 
-# Common workflow 3
-# Integration with other tools
+print(":root {")
+for l in lines:
+    print(l)
+print("}")
+EOF
+```
+
+### CI validation
+
+```yaml
+# .github/workflows/design-check.yml
+name: Design Token Validation
+on: [pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract tokens from DESIGN.md
+        run: python3 scripts/extract-tokens.py > /tmp/expected.css
+      - name: Build computed CSS
+        run: npm run build:css
+      - name: Diff tokens
+        run: diff /tmp/expected.css dist/tokens.css
 ```
 
 ---
 
 ## ⚙️ CONFIGURATION
 
-| Parameter | Default | Options | Notes |
+| Section | Required | Format | Notes |
 |---|---|---|---|
-| Model | Auto | Any supported model | Override per task |
-| Output format | Structured | Plain/Structured/Rich | Context-dependent |
-| Verbosity | Normal | Minimal/Normal/Verbose | Production vs debug |
-| Timeout | 30s | 1s-300s | Adjust per use case |
-| Retry count | 3 | 1-10 | Network reliability |
-| Cache | Enabled | True/False | Performance optimization |
-| Log level | INFO | DEBUG/INFO/WARN/ERROR | Monitoring needs |
-| Parallel | False | True/False | Speed vs resource use |
-| Max tokens | 4096 | 256-32768 | Cost vs completeness |
-| Temperature | 0.7 | 0.0-1.0 | Determinism vs creativity |
-| Auth method | ENV | ENV/File/IAM | Security posture |
-| Region | us-east-1 | Multiple | Latency + compliance |
+| Color tokens | Yes | Markdown table | CSS var names, hex/oklch values |
+| Typography | Yes | Markdown table | clamp() for fluid scales |
+| Spacing | Yes | Markdown table | Base unit + scale |
+| Components | Yes | Prose + state table | All states, all variants |
+| Motion | Recommended | Prose + table | Duration, easing, trigger |
+| Breakpoints | Recommended | Markdown table | Name, px value, semantic meaning |
+| Decision log | Recommended | Prose under `## Why` | Rationale for non-obvious choices |
+| Accessibility | Yes | Table or checklist | WCAG level, focus policy |
+| Dark mode | Conditional | Token overrides | Separate `:root[data-theme=dark]` block |
+| Icons | Optional | Table | Name, source, usage |
+| Imagery | Optional | Prose | Aspect ratios, treatment, naming |
 
 ---
 
 ## 💡 TIPS AND TRICKS
 
-### Prompting & Setup
+### Writing Specs
 
 | Tip | Detail | Source |
 |---|---|---|
-| Use explicit context | More context in prompt → better design-md output | [HMZ](https://github.com/hmzainjamil) |
-| Start with simple cases | Validate basic usage before complex workflows | [HMZ](https://github.com/hmzainjamil) |
-| Read the SKILL.md | Full spec in the file — most answers are there | [HMZ](https://github.com/hmzainjamil) |
+| Write states before components | State inventory reveals edge cases early | [HMZ](https://github.com/hmzainjamil) |
+| Use exact CSS values in tables | `clamp(1rem, 2vw, 1.5rem)` not "fluid" | [HMZ](https://github.com/hmzainjamil) |
+| Include anti-patterns section | What NOT to do is as important as what to do | [HMZ](https://github.com/hmzainjamil) |
 
-### Performance
-
-| Tip | Detail | Source |
-|---|---|---|
-| Batch similar tasks | Group related work to minimize context switches | [HMZ](https://github.com/hmzainjamil) |
-| Cache repeated context | Use CLAUDE.md for persistent instructions | [HMZ](https://github.com/hmzainjamil) |
-| Use Haiku for classification | Cheaper model for simple routing decisions | [HMZ](https://github.com/hmzainjamil) |
-
-### Production
+### AI Integration
 
 | Tip | Detail | Source |
 |---|---|---|
-| Add to CLAUDE.md | Reference design-md in project CLAUDE.md for automatic activation | [HMZ](https://github.com/hmzainjamil) |
-| Version your configs | Track settings and skill files in git | [HMZ](https://github.com/hmzainjamil) |
-| Monitor outputs | Log and review agent outputs for quality regression | [HMZ](https://github.com/hmzainjamil) |
+| Add `<!-- AI: ... -->` comments | Give agents implementation hints in HTML comments | [HMZ](https://github.com/hmzainjamil) |
+| Put DESIGN.md path in CLAUDE.md | `Read DESIGN.md before implementing any UI component` | [HMZ](https://github.com/hmzainjamil) |
+| Version DESIGN.md alongside components | PR should include DESIGN.md change + component change | [HMZ](https://github.com/hmzainjamil) |
 
-### Integration
+### Maintenance
 
 | Tip | Detail | Source |
 |---|---|---|
-| Combine with other skills | Skills compose — layer multiple for complex workflows | [HMZ](https://github.com/hmzainjamil) |
-| Use hooks for automation | SessionStop hook for logging and cleanup | [HMZ](https://github.com/hmzainjamil) |
-| Test in isolation first | Verify skill alone before combining with others | [HMZ](https://github.com/hmzainjamil) |
+| Add a `## Last Updated` section | Shows staleness at a glance | [HMZ](https://github.com/hmzainjamil) |
+| Lock tokens after launch | Mark locked tokens with ⛔ — change requires RFC | [HMZ](https://github.com/hmzainjamil) |
+| Link from README.md | `See [DESIGN.md](./DESIGN.md) for visual spec` | [HMZ](https://github.com/hmzainjamil) |
+
+### Workflow
+
+| Tip | Detail | Source |
+|---|---|---|
+| DESIGN.md PR review = design review | Every visual change goes through PR with diff | [HMZ](https://github.com/hmzainjamil) |
+| Export to Figma variables | Token Studio reads JSON from DESIGN.md export script | [HMZ](https://github.com/hmzainjamil) |
+| Generate Storybook story from spec | Script reads component state table → generates story template | [HMZ](https://github.com/hmzainjamil) |
 
 ---
 
@@ -179,45 +242,31 @@ ls designs/
 
 | Issue | Cause | Fix |
 |---|---|---|
-| Not found error | Path or config missing | Verify install path and config file |
-| Auth failure | Missing or expired credentials | Re-run auth setup command |
-| Timeout | Slow network or large payload | Increase timeout in config |
-| Rate limit | Too many requests | Add retry with exponential backoff |
-| Wrong output | Misconfigured parameters | Review config table above |
-| Dependency missing | Required package not installed | Run install command again |
-| Skill not activating | Wrong skill path | Verify ~/.claude/skills/<name>/SKILL.md |
-| Out of memory | Large context or dataset | Reduce batch size or context window |
+| DESIGN.md ignored by team | Not referenced in CLAUDE.md or README | Add `Read DESIGN.md before any UI work` to CLAUDE.md |
+| Token values drift from Figma | Manual sync process | Automate with Token Studio + export script |
+| Component spec too vague | No state table, no exact values | Add exact CSS values, add 8-state matrix |
+| AI agent ignores spec | Context window full before DESIGN.md loaded | Put DESIGN.md reference early in CLAUDE.md |
+| CI validation failing | Token extraction regex too strict | Update regex to match your token naming pattern |
+| DESIGN.md too long to read | Over-documented, includes rationale for everything | Split into `DESIGN.md` (spec) + `DESIGN-DECISIONS.md` (rationale) |
+| Conflicting decisions across sections | No single owner, written by committee | Assign single DRI per section, mark with `Owner:` |
+| Outdated on launch | No maintenance ritual | Add `DESIGN.md review` to sprint planning checklist |
 
 ---
 
 ## 📊 ARCHITECTURE
 
 ```
-Input
-  │
-  ▼
-Configuration Layer
-  ├── Settings/config files
-  ├── Environment variables
-  └── Runtime overrides
-  │
-  ▼
-Processing Core
-  ├── Input validation
-  ├── Main logic
-  └── Output formatting
-  │
-  ▼
-Integration Layer
-  ├── External APIs
-  ├── File system
-  └── Other tools
-  │
-  ▼
-Output
-  ├── Primary result
-  ├── Metadata/logs
-  └── Side effects
+project/
+├── DESIGN.md           ← living spec (this file)
+├── scripts/
+│   ├── extract-tokens.py   ← DESIGN.md → CSS/JSON
+│   └── validate-design.js  ← CI token checker
+├── src/
+│   └── styles/
+│       └── tokens.css      ← generated from DESIGN.md
+└── .github/
+    └── workflows/
+        └── design-check.yml ← validates tokens in CI
 ```
 
 ---
@@ -226,57 +275,84 @@ Output
 
 | Priority | Feature | Status |
 |---|---|---|
-| P0 | Core functionality | ✅ Done |
-| P0 | Documentation | ✅ Done |
-| P1 | Advanced configuration | 🔄 In Progress |
-| P1 | Integration examples | 🔄 In Progress |
-| P2 | Performance optimization | 📅 Planned |
-| P2 | Additional output formats | 📅 Planned |
-| P3 | Enterprise features | 📅 Planned |
-| P3 | Extended platform support | 📅 Planned |
+| P0 | DESIGN.md template | ✅ Done |
+| P0 | Token extraction script | ✅ Done |
+| P1 | Figma variables sync | 🔄 In Progress |
+| P1 | CI validation GitHub Action | 📅 Planned |
+| P2 | Storybook story generator | 📅 Planned |
+| P2 | VS Code extension for preview | 📅 Planned |
+| P3 | DESIGN.md → Tailwind config generator | 📅 Planned |
 
 ---
 
 ## ☠️ STARTUPS / BUSINESSES
 
-> What this replaces for businesses and product teams
-
-| Old Approach | Replacement | Business Impact |
+| Old Way | Replaced By | Disruption |
 |---|---|---|
-| Manual process | Automated with this tool | 10x speed improvement |
-| Specialized hire | AI agent handles it | Reduce headcount requirements |
-| Multiple tools | Single integrated solution | Reduced context switching |
-| Long onboarding | Read README and ship | Days to minutes |
-| Inconsistent output | Structured, repeatable results | Quality at scale |
-| Expensive consultants | Self-service with docs | Cost reduction |
-| Siloed knowledge | Shared, documented system | Team-wide capability |
-| Reactive approach | Proactive automation | Prevent issues before they occur |
+| Figma as source of truth | DESIGN.md in git — version-controlled | 🔥 High |
+| Zeroheight / Supernova ($500/mo) | Plain Markdown + GitHub | 💀 Total |
+| Design handoff meetings | Agents read DESIGN.md directly | 🔥 High |
+| Storybook maintenance | DESIGN.md spec + generated stories | 🔥 High |
+| Custom design system tooling | Text file + 2 scripts | 💀 Total |
 
 ---
 
-## 📚 Additional Resources
+## Full DESIGN.md Template
 
-- [Anthropic Documentation](https://docs.anthropic.com)
-- [Claude Code Documentation](https://docs.anthropic.com/claude-code)
-- [Model Context Protocol](https://modelcontextprotocol.io)
-- [Awesome Claude](https://github.com/hmzainjamil/awesome-claude)
-- [HMZ GitHub](https://github.com/hmzainjamil)
+```markdown
+# [Project] Design System
+<!-- AI: Read this entire file before implementing any UI component -->
 
----
+## Metadata
+- Version: 1.0.0
+- Last Updated: [date]
+- Owner: [name]
+- WCAG Target: AA (2.2)
 
-## Contributing
+## Color Tokens
 
-1. Fork the repo
-2. Create feature branch: `git checkout -b feature/your-feature`
-3. Commit changes: `git commit -m 'Add your feature'`
-4. Push: `git push origin feature/your-feature`
-5. Open Pull Request
+### Base palette
+| Token               | Value               | Dark mode value     |
+|---------------------|---------------------|---------------------|
+| `--color-bg`        | `#ffffff`           | `#0a0a0a`           |
+| `--color-surface`   | `#f8f8f8`           | `#111111`           |
+| `--color-border`    | `#e5e5e5`           | `#222222`           |
+| `--color-text`      | `#111111`           | `#ededed`           |
+| `--color-muted`     | `#666666`           | `#888888`           |
+| `--color-accent`    | `#0070f3`           | `#60a5fa`           |
+| `--color-error`     | `#e5484d`           | `#f87171`           |
+| `--color-success`   | `#30a46c`           | `#4ade80`           |
+| `--color-warning`   | `#f76b15`           | `#fb923c`           |
 
----
+## Typography
 
-## License
+| Token             | Value                               | Usage         |
+|-------------------|-------------------------------------|---------------|
+| `--font-sans`     | `'Inter', system-ui, sans-serif`    | Body, UI      |
+| `--font-display`  | `'Fraunces', serif`                 | Hero, H1      |
+| `--font-mono`     | `'DM Mono', monospace`              | Code          |
+| `--text-sm`       | `clamp(0.875rem, 1.5vw, 1rem)`      | Small labels  |
+| `--text-base`     | `clamp(1rem, 2vw, 1.125rem)`        | Body copy     |
+| `--text-lg`       | `clamp(1.125rem, 2.5vw, 1.375rem)` | Lead text     |
+| `--text-2xl`      | `clamp(1.5rem, 4vw, 2.25rem)`       | Section heads |
+| `--text-5xl`      | `clamp(3rem, 8vw, 6rem)`            | Hero          |
 
-MIT — see [LICENSE](LICENSE) for details.
+## Components
+
+### Button
+<!-- AI: implement with CVA variants, always include aria-busy on loading state -->
+
+Variants: primary, secondary, ghost, destructive
+Sizes: sm (32px), md (40px), lg (48px)
+
+| State    | primary bg      | primary text | border  |
+|----------|-----------------|--------------|---------|
+| default  | `--color-accent` | white       | none    |
+| hover    | accent -10% L   | white       | none    |
+| focus    | accent          | white       | 2px outline offset 2 |
+| disabled | accent 40% opacity | white    | none    |
+| loading  | accent          | white       | none + spinner |
+```
 
 ---
 
@@ -290,220 +366,135 @@ Built by [HMZ](https://github.com/hmzainjamil)
 
 ---
 
-## 🔬 DEEP DIVE
+## Resources
 
-### Under the Hood
-
-The implementation follows a layered architecture pattern where each concern is isolated:
-
-**Layer 1 — Input validation:** All inputs are schema-validated before processing. Malformed inputs throw typed errors with actionable messages, never silently corrupt state.
-
-**Layer 2 — Processing pipeline:** A series of composable steps, each with:
-- Input contract (what it expects)
-- Output contract (what it guarantees)
-- Error contract (what can go wrong + how it signals failure)
-
-**Layer 3 — Output handling:** Results are structured, typed, and include metadata (timing, token usage, confidence where applicable).
-
-### Key Design Decisions
-
-| Decision | Alternative Considered | Why This Choice |
-|----------|----------------------|-----------------|
-| Stateless per-request | Persistent session state | Easier horizontal scaling; no session affinity needed |
-| Streaming by default | Buffered response | Better UX; first byte in <500ms vs 3-8s full wait |
-| Typed errors | String error messages | Callers can branch on error type programmatically |
-| Plugin architecture | Monolithic feature set | Users extend without forking; community contributes safely |
-| Config from env vars | Config file only | Twelve-factor app compliance; works in containers/K8s |
-
-### Performance Characteristics
-
-| Operation | Latency (P50) | Latency (P99) | Notes |
-|-----------|--------------|--------------|-------|
-| Cold start | 800ms-2s | 3-5s | Warm instances: <100ms |
-| Request processing | 50-200ms | 800ms | Depends on payload size |
-| Streaming first byte | 100-300ms | 800ms | After model starts generating |
-| Batch processing | 10-50ms/item | 200ms/item | Parallelized across items |
+- [Design Tokens Community Group](https://www.designtokens.org)
+- [Token Studio for Figma](https://tokens.studio)
+- [Style Dictionary](https://amzn.github.io/style-dictionary)
+- [WCAG 2.2](https://www.w3.org/TR/WCAG22/)
+- [CSS Custom Properties — MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [Conventional Commits](https://www.conventionalcommits.org)
+- [shadcn/ui](https://ui.shadcn.com)
+- [CVA — Class Variance Authority](https://cva.style)
 
 ---
 
-## 🧪 TESTING
+## Example: Component Decision Log
 
-```bash
-# Run all tests
-pytest tests/ -v
+```markdown
+## Why — Design Decisions
 
-# Run with coverage
-pytest tests/ --cov=src --cov-report=html
+### Why no border-radius on buttons?
+Decision: 0px radius on all interactive elements.
+Reason: Swiss archetype — geometric clarity over softness. Radius implies friendliness; this product targets professional B2B users.
+Date: 2024-01-15
+Owner: HMZ
 
-# Run specific test file
-pytest tests/test_core.py -v
+### Why Inter not Geist?
+Decision: Inter for all body text.
+Reason: Better letter spacing at 14px — Geist optimized for code/IDE environments, not dense body copy.
+Date: 2024-01-10
+Owner: HMZ
 
-# Run only fast tests (skip integration)
-pytest tests/ -m "not integration" -v
-
-# Watch mode (re-run on file change)
-ptw tests/ -- -v
-```
-
-### Test Structure
-
-```
-tests/
-├── unit/
-│   ├── test_config.py        # Config parsing + validation
-│   ├── test_core.py          # Core business logic
-│   └── test_utils.py         # Utility functions
-├── integration/
-│   ├── test_api.py           # API endpoint tests
-│   └── test_pipeline.py      # Full pipeline tests
-└── fixtures/
-    ├── sample_input.json
-    └── expected_output.json
+### Why oklch() not hex?
+Decision: oklch() for all color tokens.
+Reason: Better perceptual uniformity. Lightness scale 0.1→0.9 is visually consistent across all hues. Hex doesn't guarantee this.
+Date: 2024-02-01
+Owner: HMZ
 ```
 
 ---
 
-## 🐳 DOCKER
+## Example: Accessibility Spec
 
-```dockerfile
-# Dockerfile
-FROM python:3.11-slim
+```markdown
+## Accessibility
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+### Requirements
+- WCAG 2.2 Level AA for all public-facing pages
+- Level AAA for key conversion flows (pricing, checkout)
 
-COPY . .
-EXPOSE 8080
+### Focus management
+- All interactive elements must have visible focus ring
+- Focus ring: 2px solid `--color-accent`, offset 2px
+- Tab order must follow visual reading order
+- Skip-to-content link as first element in `<body>`
 
-CMD ["python", "-m", "src.main", "--port", "8080"]
-```
+### Color contrast minimums
+| Context | Minimum ratio |
+|---|---|
+| Body text | 4.5:1 |
+| Large text (>24px or >18.67px bold) | 3:1 |
+| UI components (borders, icons) | 3:1 |
+| Decorative elements | No requirement |
 
-```bash
-# Build
-docker build -t myapp:latest .
-
-# Run locally
-docker run -p 8080:8080 --env-file .env myapp:latest
-
-# Run in background
-docker run -d -p 8080:8080 --env-file .env --name myapp myapp:latest
-
-# View logs
-docker logs -f myapp
-
-# Shell into container
-docker exec -it myapp /bin/bash
-```
-
----
-
-## 🔄 CI/CD
-
-```yaml
-# .github/workflows/ci.yml
-name: CI
-
-on: [push, pull_request]
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - run: pip install -r requirements.txt
-      - run: pytest tests/ -v --cov=src
-      
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: pip install ruff mypy
-      - run: ruff check src/
-      - run: mypy src/
-
-  deploy:
-    needs: [test, lint]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        run: echo "Deploy step here"
+### Component-level requirements
+| Component | Requirement |
+|---|---|
+| Button | `aria-disabled` when disabled, not `disabled` attr alone |
+| Input | Always paired with `<label>` via `for/id` or `aria-labelledby` |
+| Modal | Focus trapped inside, `aria-modal="true"`, Esc closes |
+| Icon-only button | `aria-label` required |
+| Loading state | `aria-busy="true"` on container |
+| Error message | `aria-describedby` linking input to error |
 ```
 
 ---
 
-## 📁 PROJECT STRUCTURE
+## Motion Spec
 
+```markdown
+## Motion
+
+### Principles
+- Animate purpose, not decoration
+- Respect `prefers-reduced-motion` — always
+- Entry animations: fade + translate (never scale alone)
+- Exit animations: fade only (no translate)
+
+### Durations
+| Interaction | Duration | Easing |
+|---|---|---|
+| Button press | 100ms | ease-in |
+| Hover state | 200ms | ease-out |
+| Panel open | 300ms | cubic-bezier(0.16, 1, 0.3, 1) |
+| Page transition | 400ms | ease-in-out |
+| Toast notification | 250ms in / 200ms out | ease-out / ease-in |
+
+### Reduced motion override
+All animations must wrap in:
+```css
+@media (prefers-reduced-motion: no-preference) {
+  /* animation here */
+}
 ```
-.
-├── src/
-│   ├── __init__.py
-│   ├── main.py           # Entry point
-│   ├── config.py         # Config loading + validation
-│   ├── core/
-│   │   ├── __init__.py
-│   │   ├── engine.py     # Core processing logic
-│   │   └── models.py     # Data models + schemas
-│   ├── api/
-│   │   ├── __init__.py
-│   │   ├── routes.py     # HTTP route definitions
-│   │   └── middleware.py # Auth, rate limiting, logging
-│   └── utils/
-│       ├── __init__.py
-│       ├── logging.py    # Structured logging setup
-│       └── retry.py      # Retry + backoff utilities
-├── tests/
-├── docs/
-├── .env.example
-├── requirements.txt
-├── pyproject.toml
-└── README.md
+Or use: `transition: none` when `prefers-reduced-motion: reduce`
 ```
 
 ---
 
-## 🤝 CONTRIBUTING
+## Spacing System
 
-```bash
-# Fork + clone
-git clone https://github.com/YOUR_USERNAME/REPO_NAME
-cd REPO_NAME
+```markdown
+## Spacing
 
-# Create virtual env
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scriptsctivate
+Base unit: 4px
 
-# Install dev deps
-pip install -r requirements-dev.txt
+| Token | Value | Usage |
+|---|---|---|
+| `--space-1` | 4px | Icon padding, tight gaps |
+| `--space-2` | 8px | Inner component padding |
+| `--space-3` | 12px | Form field padding |
+| `--space-4` | 16px | Standard padding |
+| `--space-6` | 24px | Section gaps |
+| `--space-8` | 32px | Card padding |
+| `--space-12` | 48px | Large section gaps |
+| `--space-16` | 64px | Page section padding |
+| `--space-24` | 96px | Hero padding |
 
-# Create feature branch
-git checkout -b feat/your-feature-name
-
-# Make changes, add tests
-pytest tests/ -v
-
-# Commit + push
-git add src/ tests/
-git commit -m "feat: your feature description"
-git push origin feat/your-feature-name
-
-# Open PR against main
+### Rules
+- Never use px values directly in components — always use tokens
+- Vertical rhythm: headings always have `margin-block-end: var(--space-4)`
+- Stack spacing: siblings separated by `--space-6`
+- Section spacing: `padding-block: var(--space-16)` minimum
 ```
-
-**PR checklist:**
-- [ ] Tests pass (`pytest tests/ -v`)
-- [ ] No linting errors (`ruff check src/`)
-- [ ] Type hints added for new functions
-- [ ] Docstrings for public API
-- [ ] CHANGELOG updated if breaking change
-
----
-
-## 📄 LICENSE
-
-MIT License. See [LICENSE](LICENSE) file.
