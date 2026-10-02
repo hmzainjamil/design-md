@@ -8,11 +8,11 @@ This repository is intended to provide design-system information in Markdown. Th
 |---|---|
 | Root README | Present |
 | Root license | MIT license present |
-| Brand-specific documents | Not found at checked paths such as `apple/README.md`, `linear/README.md`, `brands/apple.md`, and `brands/README.md` |
+| Brand-specific documents | No local specification content was verified at the checked paths. The recursive tree contains 59 per-brand README stubs under `design-md/`; they redirect to `getdesign.md` pages, whose content and currentness were not reviewed. |
 | Package, install, test, and CI configuration | Not found at checked root paths |
 | Brand accuracy and rights | Not verified |
 
-Repository search was unavailable for a complete recursive inventory. Do not treat the former README's brand list or design details as an available, verified catalog. For now, browse the repository files and verify each design specification against the brand's own current sources before use.
+The recursive README inventory on this branch lists 61 Markdown paths: the root README, this inventory, and 59 per-brand redirect stubs. These stubs do not contain local design specifications. Their linked pages, accuracy, currentness, and reuse rights were not reviewed. Do not treat the former README's brand list or design details as a verified catalog. Verify any design specification against the brand's own current sources before use.
 
 ## Intended contribution format
 
