@@ -27,3 +27,7 @@ Markdown notes can provide context to a designer or assistant, but do not establ
 See [LICENSE](LICENSE). Verify rights and attribution for any brand-specific material before redistribution.
 
 See [CONTENT_REVIEW.md](CONTENT_REVIEW.md) for paths checked and claims removed.
+
+## README index
+
+Browse the [recursive README inventory](docs/README.md) for README Markdown files in this branch.
